@@ -1,7 +1,7 @@
 # ==========================================
 # 1. meson builder
 # ==========================================
-FROM debian:trixie-slim AS mesonn-builder
+FROM debian:trixie-slim AS meson-builder
 
 ARG MESON_VERSION=1.12.0
 
@@ -49,5 +49,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=mesonn-builder /usr/local/meson-dist/ /usr/local/
+COPY --from=meson-builder /usr/local/meson-dist/ /usr/
 COPY --from=ninja-builder /usr/local/ninja-dist/ /usr/local/
