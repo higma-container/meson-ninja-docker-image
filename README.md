@@ -6,17 +6,17 @@
 # Build
 
 ```sh
-docker run -it yoshiyasu1111/meson-ninja:v0.1 /bin/bash
+$ docker build -t ghcr.io/higma-container/meson-ninja:v0.2 .
 ```
 
 # Push
 
 ```sh
-$ docker push yoshiyasu1111/meson-ninja:v0.1  
+$ docker push ghcr.io/higma-container/meson-ninja:v0.2
 ```
 
 # Multi Architecture
 
 ```sh
-$ docker build --platform linux/amd64,linux/arm64 -t yoshiyasu1111/meson-ninja:v0.1 --push .
+$ docker build --platform linux/amd64,linux/arm64 -t ghcr.io/higma-container/meson-ninja:v0.2 --push .
 ```

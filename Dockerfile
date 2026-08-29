@@ -3,7 +3,7 @@
 # ==========================================
 FROM debian:trixie-slim AS mesonn-builder
 
-ARG MESON_VERSION=1.11.1
+ARG MESON_VERSION=1.12.0
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -42,10 +42,12 @@ RUN curl -OL https://github.com/ninja-build/ninja/archive/refs/tags/v${NINJA_VER
 # ==========================================
 FROM debian:trixie-slim
 
+LABEL org.opencontainers.image.source="https://github.com/higma-container/meson-ninja-docker-image"
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
         # for meson
         python3 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=mesonn-builder /usr/local/meson-dist/ /usr/
+COPY --from=mesonn-builder /usr/local/meson-dist/ /usr/local/
 COPY --from=ninja-builder /usr/local/ninja-dist/ /usr/local/
