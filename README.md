@@ -6,7 +6,7 @@ mesonとninjaがインストールされた環境のdockerイメージ
 
 ## Tools version
 
-- Meson 1.11.1
+- Meson 1.12.0
 - ninja 1.13.2
 
 ## 手動Build
