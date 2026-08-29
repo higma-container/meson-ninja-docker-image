@@ -22,7 +22,7 @@ RUN git clone --depth=1 --branch ${MESON_VERSION} https://github.com/mesonbuild/
 # ==========================================
 FROM debian:trixie-slim AS ninja-builder
 
-ARG NINJA_VERSION=1.13.1
+ARG NINJA_VERSION=1.13.2
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl cmake g++ make python3 ca-certificates \
