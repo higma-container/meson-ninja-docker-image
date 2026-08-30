@@ -36,7 +36,7 @@ docker pull ghcr.io/higma-container/meson-ninja:v0.8
 
 ### Check Versions
 
-CMake：
+Meson：
 
 ```sh
 docker run --rm \
